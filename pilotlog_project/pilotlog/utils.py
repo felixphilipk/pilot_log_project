@@ -2,13 +2,14 @@ import logging
 import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_unixtime
+from dotenv import load_dotenv
 
-# Initialize logger
+load_dotenv()
 logger = logging.getLogger(__name__)
 
-# Set environment variables for PySpark
-os.environ['PYSPARK_PYTHON'] = 'C:/Program Files/Python311/python.exe'
-os.environ['PYSPARK_DRIVER_PYTHON'] = 'C:/Program Files/Python311/python.exe'
+# Need to update in env file
+os.environ['PYSPARK_PYTHON'] = os.getenv('PYSPARK_PYTHON')
+os.environ['PYSPARK_DRIVER_PYTHON'] = os.getenv('PYSPARK_DRIVER_PYTHON')
 
 def transform_data(file_path):
     """

@@ -16,17 +16,17 @@ def lint_json_file(file_path):
         return False, None
 
 def import_pilotlog_data(file_path):
-    # Lint the JSON file before processing
+    # Lints JSON file before processing
     is_valid_json, linted_file_path = lint_json_file(file_path)
     if not is_valid_json:
         logger.error(f"File {file_path} is not valid JSON. Aborting import.")
         return
     
     try:
-        # Transform data using Spark
+        # Transform the data using Spark
         transformed_data = transform_data(linted_file_path)
 
-        # Import transformed data into Django models
+        # Import's the transformed data into model
         with transaction.atomic():
             for item in transformed_data:
                 try:
@@ -35,7 +35,7 @@ def import_pilotlog_data(file_path):
                         logger.error("Missing 'guid' in item, skipping this record.")
                         continue
 
-                    # Map the flattened fields to the Django model fields
+                    # Map the flattened fields to the model fields
                     record_modified_str = item.get('record_modified')
                     record_modified = parse_datetime(record_modified_str) if record_modified_str else None
 

@@ -9,6 +9,9 @@ from django.utils.decorators import method_decorator
 from .importers import import_pilotlog_data
 from .exporters import export_pilotlog_to_csv
 
+# Crf exempt should not be used in production environment this has been added for testing
+
+
 @method_decorator(csrf_exempt, name='dispatch')
 class ImportDataView(APIView):
     def post(self, request):
@@ -27,9 +30,11 @@ class ImportDataView(APIView):
         else:
             return Response({"error": "File not uploaded"}, status=status.HTTP_400_BAD_REQUEST)
 
+
 @csrf_exempt
 def export_data_view(request):
     return export_pilotlog_to_csv()
+
 
 @ensure_csrf_cookie
 def get_csrf_token(request):
