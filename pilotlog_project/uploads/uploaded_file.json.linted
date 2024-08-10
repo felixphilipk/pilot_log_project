@@ -1,0 +1,42 @@
+[
+    {
+        "guid": "00000000-0000-0000-0000-000000000367",
+        "table": "Aircraft",
+        "meta": {
+            "Fin": "",
+            "Sea": false,
+            "TMG": false,
+            "Efis": false,
+            "FNPT": 0,
+            "Make": "Cessna",
+            "Run2": false,
+            "Class": 5,
+            "Model": "C150",
+            "Power": 1,
+            "Seats": 0,
+            "Active": true,
+            "Kg5700": false,
+            "Rating": "",
+            "Company": "Other",
+            "Complex": false,
+            "CondLog": 69,
+            "FavList": false,
+            "Category": 1,
+            "HighPerf": false,
+            "SubModel": "",
+            "Aerobatic": false,
+            "RefSearch": "PHALI",
+            "Reference": "PH-ALI",
+            "Tailwheel": false,
+            "DefaultApp": 0,
+            "DefaultLog": 2,
+            "DefaultOps": 0,
+            "DeviceCode": 1,
+            "AircraftCode": "00000000-0000-0000-0000-000000000367",
+            "DefaultLaunch": 0,
+            "Record_Modified": 1616320991
+        },
+        "platform": 9,
+        "_modified": 1616317613
+    }
+]
